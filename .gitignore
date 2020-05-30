@@ -1,3 +1,6 @@
 # ignore all
 *.idea/*
 */target/*
+reactive-consumer/.idea/*
+rest-endpoint/.idea/*
+reactive-consumer/.idea/misc.xml

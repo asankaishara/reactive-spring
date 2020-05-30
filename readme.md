@@ -1,4 +1,4 @@
-## This project demonstrate about consuming reset service in reactive manner
+## This project demonstrate consuming reset service in reactive manner
 
 ### `rest-endpoint` will expose 3 simple web service endpoints
 

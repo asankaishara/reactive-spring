@@ -1,11 +1,11 @@
 package org.ai;
 
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.junit.Test;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
-import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class TestRunner {
     @Test
     public void testRun() throws InterruptedException {
 
-        List<HttpResponse> responses = new ArrayList<>();
+        List<CloseableHttpResponse> responses = new ArrayList<>();
 
         Disposable subscribe = Flux.just(
                 new HttpConnector("http://localhost:8080/ping1"),
@@ -38,8 +38,8 @@ public class TestRunner {
         }
 
         System.out.println("All responses received");
-        for (HttpResponse respons : responses) {
-            System.out.println("response = " + respons.body());
+        for (CloseableHttpResponse response : responses) {
+            System.out.println("response = " + response.getStatusLine());
         }
 
 

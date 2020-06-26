@@ -4,3 +4,6 @@
 reactive-consumer/.idea/*
 rest-endpoint/.idea/*
 reactive-consumer/.idea/misc.xml
+reactive-consumer/reactive-consumer.iml
+rest-endpoint/rest-endpoint.iml
+reactive-consumer/.idea/misc.xml

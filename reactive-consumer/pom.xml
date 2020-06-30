@@ -7,6 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>reactive-consumer</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <name>reactive-consumer</name>
     <!-- FIXME change it to the project's website -->
@@ -21,6 +22,7 @@
     <properties>
         <java.version>1.8</java.version>
         <bootstrap.version>4.2.1</bootstrap.version>
+        <start-class>org.ai.StartWebApplication</start-class>
     </properties>
 
     <dependencies>
@@ -31,11 +33,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--<dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webflux</artifactId>
-            <version>5.1.4.RELEASE</version>
-        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>io.projectreactor</groupId>
@@ -58,6 +60,7 @@
     </dependencies>
 
     <build>
+        <finalName>reactive-consumer</finalName>
         <plugins>
 
             <!-- Package as an executable jar/war -->

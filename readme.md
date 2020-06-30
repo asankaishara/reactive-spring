@@ -14,4 +14,8 @@
  
  ``TestRunner`` will create 3 connections with Flux and subscribe to ``callGet`` parallel.
  
+ Also can build the project as war and deploy in any application server. Then call the following endpoint to consume the rest service
+ 
+ ``<base url of the appliction>/consume-rest``
+ 
  while loop wait until all the results become available and print responses from the endpoints 

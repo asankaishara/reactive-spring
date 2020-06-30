@@ -1,25 +1,25 @@
 package org.ai;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 
 public class HttpConnector {
 
     private String url;
+    CloseableHttpClient httpClient = HttpClients.createDefault();
 
     public HttpConnector(String url) {
         this.url = url;
     }
 
-    public HttpResponse<String> callGet() {
+    public CloseableHttpResponse callGet() {
         try {
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url))
-                    .build();
-            return client.send(request, HttpResponse.BodyHandlers.ofString());
+            HttpGet request = new HttpGet(url);
+            CloseableHttpResponse response = httpClient.execute(request);
+            System.out.println("Response received from endpoint:["+url+"]");
+            return response;
         } catch (Exception e) {
             System.out.println("e = " + e);
             return null;
